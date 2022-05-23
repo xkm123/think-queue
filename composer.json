@@ -1,0 +1,29 @@
+{
+    "name": "xkm123/think-queue",
+    "description": "The ThinkPHP Queue Package",
+    "type": "think-extend",
+    "authors": [
+        {
+            "name": "xkm",
+            "email": "623279281@qq.com"
+        }
+    ],
+    "license": "Apache-2.0",
+    "require": {
+        "topthink/think-helper": ">=1.0.4",
+        "topthink/think-installer": ">=1.0.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "src"
+        },
+        "files": [
+            "src/common.php"
+        ]
+    },
+    "extra": {
+        "think-config": {
+            "queue": "src/config.php"
+        }
+    }
+}
