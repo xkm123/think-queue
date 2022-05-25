@@ -1,7 +1,7 @@
-# think-queue
+# think-queue THINKPHP 5+ 兼容版
 
 ## 安装
-> composer require topthink/think-queue
+> composer require xkm123/think-queue
 
 ## 配置
 > 配置文件位于 `application/extra/queue.php`
