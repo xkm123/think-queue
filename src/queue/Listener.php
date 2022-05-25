@@ -12,7 +12,7 @@
 namespace think\queue;
 
 use Closure;
-use think\Process;
+use think\queue\process\Process;
 
 class Listener
 {
@@ -69,7 +69,7 @@ class Listener
     }
 
     /**
-     * @param \Think\Process $process
+     * @param \think\queue\process\Process $process
      * @param  int           $memory
      */
     public function runProcess(Process $process, $memory)
@@ -88,7 +88,7 @@ class Listener
      * @param  int    $delay
      * @param  int    $memory
      * @param  int    $timeout
-     * @return \think\Process
+     * @return \think\queue\process\Process
      */
     public function makeProcess($queue, $delay, $memory, $timeout)
     {
