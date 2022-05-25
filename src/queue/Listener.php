@@ -69,7 +69,7 @@ class Listener
     }
 
     /**
-     * @param \think\queue\process\Process $process
+     * @param Process $process
      * @param  int           $memory
      */
     public function runProcess(Process $process, $memory)
@@ -88,7 +88,7 @@ class Listener
      * @param  int    $delay
      * @param  int    $memory
      * @param  int    $timeout
-     * @return \think\queue\process\Process
+     * @return Process
      */
     public function makeProcess($queue, $delay, $memory, $timeout)
     {

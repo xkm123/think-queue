@@ -11,7 +11,6 @@
 
 namespace think\queue\process\pipes;
 
-use think\queue\process;
 use think\queue\process\Process;
 
 class Windows extends Pipes
