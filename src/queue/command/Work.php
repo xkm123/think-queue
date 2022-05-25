@@ -14,7 +14,7 @@ use think\console\Command;
 use think\console\Input;
 use think\console\input\Option;
 use think\console\Output;
-use think\Hook;
+use think\queue\Hook;
 use think\queue\Job;
 use think\queue\Worker;
 use Exception;
