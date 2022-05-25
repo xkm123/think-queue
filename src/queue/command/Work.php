@@ -10,7 +10,6 @@
 // +----------------------------------------------------------------------
 namespace think\queue\command;
 
-use think\Config;
 use think\console\Command;
 use think\console\Input;
 use think\console\input\Option;
@@ -185,7 +184,7 @@ class Work extends Command
 
         if (!$handle) {
 
-            if ($class = Config::get('exception_handle')) {
+            if ($class = config('exception_handle')) {
                 if (class_exists($class) && is_subclass_of($class, "\\think\\exception\\Handle")) {
                     $handle = new $class;
                 }
