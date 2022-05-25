@@ -30,7 +30,7 @@ class Queue
 
     private static function buildConnector()
     {
-        $options = Config::get('queue');
+        $options = config('queue');
         $type    = !empty($options['connector']) ? $options['connector'] : 'Sync';
 
         if (!isset(self::$connector)) {
