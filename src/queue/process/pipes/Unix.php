@@ -12,6 +12,8 @@
 namespace think\queue\process\pipes;
 
 
+use think\queue\process\Process;
+
 class Unix extends Pipes
 {
 

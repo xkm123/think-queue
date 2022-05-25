@@ -11,6 +11,8 @@
 
 namespace think\queue\process\exception;
 
+use think\queue\process\Process;
+
 class Timeout extends \RuntimeException
 {
 
