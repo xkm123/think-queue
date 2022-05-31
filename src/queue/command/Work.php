@@ -150,10 +150,8 @@ class Work extends Command
     {
         if (method_exists('think\Cache', 'get')) {
             return \think\Cache::get('think:queue:restart');
-        }else{
-            return \think\facade\Cache::get('think:queue:restart');
         }
-
+        return \think\facade\Cache::get('think:queue:restart');
     }
 
     /**

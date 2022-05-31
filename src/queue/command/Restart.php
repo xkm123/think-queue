@@ -11,7 +11,6 @@
 
 namespace think\queue\command;
 
-use think\Cache;
 use think\console\Command;
 use think\console\Input;
 use think\console\Output;
@@ -25,7 +24,11 @@ class Restart extends Command
 
     public function execute(Input $input, Output $output)
     {
-        Cache::set('think:queue:restart', time());
+        if (method_exists('think\Cache', 'get')) {
+            \think\Cache::set('think:queue:restart', time());
+        }else{
+            \think\facade\Cache::set('think:queue:restart', time());
+        }
         $output->writeln("<info>Broadcasting queue restart signal.</info>");
     }
 }
