@@ -19,7 +19,6 @@ use think\queue\Job;
 use think\queue\Worker;
 use Exception;
 use Throwable;
-use think\Cache;
 use think\exception\Handle;
 use think\exception\ThrowableError;
 
@@ -149,7 +148,12 @@ class Work extends Command
      */
     protected function getTimestampOfLastQueueRestart()
     {
-        return Cache::get('think:queue:restart');
+        if (method_exists('think\Cache', 'get')) {
+            return \think\Cache::get('think:queue:restart');
+        }else{
+            return \think\facade\Cache::get('think:queue:restart');
+        }
+
     }
 
     /**
