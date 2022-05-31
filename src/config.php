@@ -10,5 +10,5 @@
 // +----------------------------------------------------------------------
 
 return [
-    'connector' => 'Sync'
+    'connector' => 'Sync' //Sync DataBase Redis TopThink
 ];

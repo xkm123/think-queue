@@ -111,7 +111,7 @@ class Work extends Command
                 Hook::listen('worker_memory_exceeded', $queue);
                 $this->stop();
             }
-            
+
             if ( $this->queueShouldRestart($lastRestart) ) {
                 Hook::listen('worker_queue_restart', $queue);
                 $this->stop();
@@ -149,7 +149,8 @@ class Work extends Command
     protected function getTimestampOfLastQueueRestart()
     {
         if (method_exists('think\Cache', 'get')) {
-            return \think\Cache::get('think:queue:restart');
+            $rm = new \ReflectionMethod('think\Cache','get');
+            if($rm->isStatic()) return \think\Cache::get('think:queue:restart');
         }
         return \think\facade\Cache::get('think:queue:restart');
     }

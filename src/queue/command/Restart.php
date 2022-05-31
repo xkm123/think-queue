@@ -24,7 +24,8 @@ class Restart extends Command
 
     public function execute(Input $input, Output $output)
     {
-        if (method_exists('think\Cache', 'get')) {
+        $rm = new \ReflectionMethod('think\Cache','get');
+        if (method_exists('think\Cache', 'get')&&$rm->isStatic()) {
             \think\Cache::set('think:queue:restart', time());
         }else{
             \think\facade\Cache::set('think:queue:restart', time());
